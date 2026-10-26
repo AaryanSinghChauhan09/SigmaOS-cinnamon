@@ -1,0 +1,17 @@
+[package]
+name = "sigmaos-cinnamon"
+version = "0.1.0"
+edition = "2021"
+authors = ["SigmaOS Project"]
+description = "Cinnamon desktop environment components"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/AaryanSinghChauhan09/SigmaOS-cinnamon"
+readme = "README.md"
+keywords = ["cinnamon", "desktop", "environment"]
+categories = ["gui"]
+
+[dependencies]
+sigmaos-kernel = { version = "0.1", path = "../SigmaOS-kernel" }
+
+[profile.release]
+opt-level = 3
