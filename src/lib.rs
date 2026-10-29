@@ -3,4 +3,6 @@
 
 pub mod cinnamon;
 
-pub use cinnamon::Cinnamon;
+pub use cinnamon::CinnamonDesktopManager;
+pub use cinnamon::CinnamonDesktopManager as Cinnamon;
+pub use cinnamon::*;
