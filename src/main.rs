@@ -1,3 +1,5 @@
+use std::env;
+use log::{info, warn, error, debug};
 use anyhow::Result;
 use clap::Parser;
 use cinnamon::cinnamon;
@@ -8,7 +10,7 @@ struct Cli {
     no_integration: bool,
 }
 
-fn main() -> Result<()> {
+fn main() -> Result<()> { -> Result<()> {
     let cli = Cli::parse();
     let config = cinnamon::Config { 
         desktop_integration: !cli.no_integration, 
@@ -21,4 +23,19 @@ fn main() -> Result<()> {
     
     println!("SigmaOS-cinnamon ready");
     Ok(())
+}
+
+#[derive(Debug, Clone)]
+struct Config {
+    verbose: bool,
+    dry_run: bool,
+}
+
+impl Config {
+    fn from_env() -> Self {
+        Config {
+            verbose: env::var("VERBOSE").is_ok(),
+            dry_run: env::var("DRY_RUN").is_ok(),
+        }
+    }
 }
