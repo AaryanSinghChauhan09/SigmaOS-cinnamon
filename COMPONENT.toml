@@ -3,12 +3,12 @@ name = "SigmaOS-cinnamon"
 tier = 2
 stability = "scaffold"
 language = "rust"
-description = "cinnamon component"
+description = "Cinnamon desktop component for SigmaOS inspired by Linux Mint"
 upstream = []
 
 [contract]
 provides = ["component"]
-depends_on = []
+depends_on = ["SigmaOS-system"]
 
 [maturity]
 status = "Scaffold"
